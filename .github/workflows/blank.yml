@@ -29,7 +29,7 @@ jobs:
           release_branches: main
           
       - name: Create a GitHub release
-        if: ${{ github.event.push }}
+        if: ${{ github.event_name == push }}
         uses: ncipollo/release-action@v1
         with:
           tag: ${{ steps.tag_version.outputs.new_tag }}
