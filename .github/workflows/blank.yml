@@ -21,6 +21,8 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
       
+      - run: echo $GITHUB_EVENT_NAME
+      
       - name: Bump version and push tag
         id: tag_version
         uses: mikael-andersson91/github-tag-action@master
