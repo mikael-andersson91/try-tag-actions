@@ -29,7 +29,7 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           release_branches: main
-          dry_run: ${{ github.event_name == 'pull_request' }}
+          pre_release_branches: mikael-andersson91-patch-1
           
       - name: Create a GitHub release
         if: ${{ github.event_name == 'push' }}
