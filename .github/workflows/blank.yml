@@ -28,7 +28,8 @@ jobs:
         uses: mikael-andersson91/github-tag-action@v0.0.2
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          pre_release_branches: mikael-andersson91-patch-1
+          release_branches: main
+          dry_run: ${{ github.event_name == 'pull_request' }}
           
       - name: Create a GitHub release
         if: ${{ github.event_name == 'push' }}
