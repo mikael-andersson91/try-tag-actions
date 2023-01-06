@@ -30,6 +30,7 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           release_branches: main
           commit_sha: ${{ github.event.pull_request.head.sha }}
+          append_commit_sha: true
           
       - name: Create a GitHub release
         if: ${{ github.event_name == 'push' }}
